@@ -14,14 +14,18 @@
       </section>
 
       <section id="get-currency">
-        <label for="currency-calculator">Calculate currency:</label>
+        <label for="currency-calculator">Calculate amount in Euros:</label>
           <input type="number" v-model.number="amount"/>
-        <select id="currency-select" v-model="selectedCurrency">
+        <select id="currency-select" v-model="selectedCurrencyRate">
           <option disabled value="">select a currency</option>
           <option v-for="(rate, currency) in currencies.rates" :value="rate">{{currency}}</option>
         </select>
-          <input type="submit" value="Calculate"/>
+          <input type="submit" value="Calculate" v-on:click="getConversion"/>
       </section>
+      <div id="converted-result" v-if="convertedResult">
+        <h2>Result:</h2>
+        <p>Conversion Rate €{{convertedResult}}</p>
+      </div>
     </div>
   </body>
 </html>
