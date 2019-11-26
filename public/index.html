@@ -24,7 +24,7 @@
       </section>
 
       <section id="get-currency-other">
-        <label for="currency-calculator">Calculate conversiob from Euros:</label>
+        <label for="currency-calculator">Calculate conversion from Euros:</label>
           <input type="number" v-model.number="reversedAmount"/>
         <select id="currency-select" v-model="reversedCurrencyRate">
           <option disabled value="">select a currency</option>
@@ -39,7 +39,7 @@
       </div>
       <div id="converted-result" v-if="reversedResult">
         <h2>Result:</h2>
-        <p>Conversion Rate: {{reversedResult}}</p>
+        <p>Conversion Rate: {{reversedResult}} {{reversedCurrency[0][0]}}</p>
       </div>
     </div>
   </body>
