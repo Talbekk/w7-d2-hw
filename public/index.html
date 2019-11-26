@@ -7,6 +7,11 @@
   </head>
   <body>
     <div id="app">
+      <section id="currency-list">
+        <ul>
+          <li v-for="(rate, country) in currencies.rates"> {{country}} : {{rate}}</li>
+        </ul>
+      </section>
     </div>
   </body>
 </html>
