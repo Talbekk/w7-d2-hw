@@ -12,6 +12,12 @@
           <li v-for="(rate, country) in currencies.rates"> {{country}} : {{rate}}</li>
         </ul>
       </section>
+
+      <section id="get-currency">
+        <label for="currency-calculator">Calculate currency:</label>
+        <input type="number" v-model.number="amount"/>
+        <input type="submit" value="Calculate"/>
+      </section>
     </div>
   </body>
 </html>
