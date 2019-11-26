@@ -3,35 +3,40 @@
   <head>
     <meta charset="utf-8">
     <title>Currency Converter</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
     <script src="js/bundle.js"></script>
   </head>
   <body>
     <div id="app">
       <section id="currency-list">
+        <h2><b><u>Current Euro Exchange Rates:</u></b></h2>
         <ul>
           <li v-for="(rate, country) in currencies.rates"> {{country}} : {{rate}}</li>
         </ul>
       </section>
+      <hr>
 
       <section id="get-currency-euros">
         <label for="currency-calculator">Calculate amount in Euros:</label>
-          <input type="number" v-model.number="amount"/>
+          <input type="number" min="0" v-model.number="amount"/>
         <select id="currency-select" v-model="selectedCurrencyRate">
           <option disabled value="">select a currency</option>
           <option v-for="(rate, currency) in currencies.rates" :value="rate">{{currency}}</option>
         </select>
           <input type="submit" value="Calculate" v-on:click="getConversion"/>
       </section>
+      <hr>
 
       <section id="get-currency-other">
         <label for="currency-calculator">Calculate conversion from Euros:</label>
-          <input type="number" v-model.number="reversedAmount"/>
+          <input type="number" min="0"v-model.number="reversedAmount"/>
         <select id="currency-select" v-model="reversedCurrencyRate">
           <option disabled value="">select a currency</option>
           <option v-for="(rate, currency) in currencies.rates" :value="rate">{{currency}}</option>
         </select>
           <input type="submit" value="Calculate" v-on:click="getReverseConversion"/>
       </section>
+      <hr>
 
       <div id="converted-result" v-if="convertedResult">
         <h2>Result:</h2>

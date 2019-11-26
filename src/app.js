@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       getConversion: function () {
         this.reversedResult = 0;
         const result = this.selectedCurrencyRate * this.amount;
-        this.convertedResult = result;
+        this.convertedResult = result.toFixed(2);
         this.amount = 0;
         this.selectedCurrencyRate = null;
       },
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         this.convertedResult = 0;
         this.reversedCurrency = [];
         const result = this.reversedAmount / this.reversedCurrencyRate;
-        this.reversedResult = result;
+        this.reversedResult = result.toFixed(2);
         const currencyList = Object.entries(this.currencies.rates);
         const selectedCurrency = currencyList.find(currency => this.reversedCurrencyRate === currency[1]);
         this.reversedCurrency.push(selectedCurrency);

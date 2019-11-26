@@ -1,0 +1,54 @@
+body  {
+  font-family: 'Merriweather', serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+ul {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+  flex-grow: 1;
+}
+li {
+  margin: 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #20437c;
+  border-radius: 5%;
+  display: inline-block;
+}
+input[type=submit] {
+  background-color: grey;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#get-currency-euros {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  flex-grow: 1;
+}
+#get-currency-other {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  flex-grow: 1;
+}
+
+#currency-calculator {
+  margin-left: : 3rem;
+}
+
+#currency-select {
+  margin-left: : 3rem;
+}
