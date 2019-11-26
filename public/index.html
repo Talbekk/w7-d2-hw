@@ -15,8 +15,12 @@
 
       <section id="get-currency">
         <label for="currency-calculator">Calculate currency:</label>
-        <input type="number" v-model.number="amount"/>
-        <input type="submit" value="Calculate"/>
+          <input type="number" v-model.number="amount"/>
+        <select id="currency-select" v-model="selectedCurrency">
+          <option disabled value="">select a currency</option>
+          <option v-for="(rate, currency) in currencies.rates" :value="rate">{{currency}}</option>
+        </select>
+          <input type="submit" value="Calculate"/>
       </section>
     </div>
   </body>
