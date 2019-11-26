@@ -13,7 +13,7 @@
         </ul>
       </section>
 
-      <section id="get-currency">
+      <section id="get-currency-euros">
         <label for="currency-calculator">Calculate amount in Euros:</label>
           <input type="number" v-model.number="amount"/>
         <select id="currency-select" v-model="selectedCurrencyRate">
@@ -22,9 +22,24 @@
         </select>
           <input type="submit" value="Calculate" v-on:click="getConversion"/>
       </section>
+
+      <section id="get-currency-other">
+        <label for="currency-calculator">Calculate conversiob from Euros:</label>
+          <input type="number" v-model.number="reversedAmount"/>
+        <select id="currency-select" v-model="reversedCurrencyRate">
+          <option disabled value="">select a currency</option>
+          <option v-for="(rate, currency) in currencies.rates" :value="rate">{{currency}}</option>
+        </select>
+          <input type="submit" value="Calculate" v-on:click="getReverseConversion"/>
+      </section>
+
       <div id="converted-result" v-if="convertedResult">
         <h2>Result:</h2>
-        <p>Conversion Rate €{{convertedResult}}</p>
+        <p>Conversion Rate: €{{convertedResult}}</p>
+      </div>
+      <div id="converted-result" v-if="reversedResult">
+        <h2>Result:</h2>
+        <p>Conversion Rate: {{reversedResult}}</p>
       </div>
     </div>
   </body>
